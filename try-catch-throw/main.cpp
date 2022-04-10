@@ -70,7 +70,7 @@ struct CustomStruct {
 void bar() {
     CustomStruct custom_struct(2022, "Hello, World!");
     throw(custom_struct);
-    cout << "after throw" << endl;
+    cout << "after throw" << endl; // shouldn't work
 }
 
 void foo() {
@@ -122,9 +122,8 @@ int main(){
         int val = -1;
         throw(val);
     }
-    int to_catch;
-    catch(to_catch) {
-        cout << to_catch << endl;
+    catch(value) {
+        cout << value << endl;
     }
     catch(all) {
         cout << "4st All" << endl; // shouldn't work
